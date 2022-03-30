@@ -1,6 +1,6 @@
 # COVID-19
-### This repository is dedicated to early detection of COVID-19 mortality study
-Versions of imported libraries are as follows:
+### This repository is dedicated to "Early detection of COVID-19 mortality" study
+The versions of the imported libraries in the "covid_romjist.py" python script file are as follows:
 
 pandas(1.3.2)
 
