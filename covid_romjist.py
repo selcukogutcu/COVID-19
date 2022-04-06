@@ -4,6 +4,8 @@ Created on Tue Jul  7 22:12:17 2020
 
 @author: selcuk.ogutcu
 """
+# python 3.7
+
 import pandas as pd # version: 1.3.2
 import numpy as np # version 1.20.3
 import matplotlib.pyplot as plt # version 3.5.0
@@ -88,10 +90,12 @@ criterion='ONE_M_M'
 df=df.replace(" ","")
 df=df.apply(pd.to_numeric)
 df=df.dropna(how="any")
+# rows with missing values have not been imputed
+# instead, they have been dropped
 
 kopya=df.copy()
 
-min_corr=0.1 #default 0.2 #mortalite
+min_corr=0.1 #default 0.2 #mortality
 
 inc_corr=0.0001
 inc_corr=0.001
@@ -128,7 +132,7 @@ while len_list>1:
 
 
 z=df[facts[0]]
-z=df.copy() # <-- geçici
+z=df.copy() # <-- temporary
 
 normalized_df=(z-z.min())/(z.max()-z.min())
 
@@ -227,14 +231,6 @@ while train_err+test_err>=threshold:
 
 elapsed_time = time.time() - start_time
 print("elapsed time=",time.strftime("%H:%M:%S",time.gmtime(elapsed_time)))
-
-# x-y açıklamaları (legend) ekle
-
-# Conclusion kısmına çoksa sayıda biomarker içerisinden
-# tespit için yeterli olan en az sayıdaki biomarker'ın seçilmesi
-# sağlanarak gerekli test-kiti sayısının indirgenmesinin veya
-# amaca uygun test kiti için gerekli niteliklerin belirlenmesinin
-# mümkün olduğu yazılacak
 
 fig, ax = plt.subplots()
 ax.plot(global_train_error,label='Train error')
