@@ -182,9 +182,9 @@ print()
 total_iter=0
 global_train_error=[]
 global_test_error=[]
-threshold=0.5
+stop_criterion=0.5
 
-while train_err+test_err>=threshold:
+while train_err+test_err>=stop_criterion:
     total_iter+=1
     train_error=net.train(X_train,y_train,epochs=num_epochs,goal=1e-6)
     #net_error.append(train_error[-1])
