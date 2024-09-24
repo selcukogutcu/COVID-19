@@ -1,6 +1,8 @@
 # COVID-19
 ### This repository is dedicated to "Early detection of COVID-19 mortality" study
 
+(Please check for revised version in "revised covid19 files" ZIP file)
+
 Python version: 3.7
 
 The versions of the imported libraries in the "covid_romjist.py" python script file are as follows:
